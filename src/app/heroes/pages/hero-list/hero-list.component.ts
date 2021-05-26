@@ -5,11 +5,7 @@ import { Hero } from '../../interfaces/heroes.interfaces';
 @Component({
   selector: 'app-hero-list',
   templateUrl: './hero-list.component.html',
-  styles: [`
-    mat-card {
-      margin-top: 20px;
-    }
-  `]
+  styles: []
 })
 export class HeroListComponent implements OnInit {
 

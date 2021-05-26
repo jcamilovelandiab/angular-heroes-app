@@ -12,6 +12,7 @@ import { HeroListComponent } from './pages/hero-list/hero-list.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
+import { HeroImagePipe } from './pipes/hero-image.pipe';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HeroCardComponent } from './components/hero-card/hero-card.component';
     HeroListComponent,
     HomeComponent,
     SearchComponent,
-    HeroCardComponent
+    HeroCardComponent,
+    HeroImagePipe
   ],
   imports: [
     CommonModule,
