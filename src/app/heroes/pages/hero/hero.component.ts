@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap, tap } from 'rxjs/operators';
 
 import { Hero } from '../../interfaces/heroes.interfaces';
@@ -8,8 +8,11 @@ import { HeroesService } from '../../services/heroes.service';
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styles: [
-  ]
+  styles: [`
+    img {
+      width: 100%;
+    }
+  `]
 })
 export class HeroComponent implements OnInit {
 
@@ -18,7 +21,8 @@ export class HeroComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private heroesService: HeroesService
+    private heroesService: HeroesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -28,6 +32,10 @@ export class HeroComponent implements OnInit {
           tap(console.log)
         )
         .subscribe( hero => this.hero = hero );
+  }
+
+  goBack(): void {
+    this.router.navigate(['/heroes/list']);
   }
 
 }
