@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Hero } from '../interfaces/heroes.interfaces';
 
 @Injectable({
@@ -8,16 +9,16 @@ import { Hero } from '../interfaces/heroes.interfaces';
 })
 export class HeroesService {
 
-  apiBaseUrl: string = 'http://localhost:3000'; 
+  apiBaseUrl: string = environment.apiBaseUrl; 
 
   constructor( private httpClient: HttpClient ) {}
 
   getHeroes(): Observable<Hero[]> {
-    return this.httpClient.get<Hero[]>(`${this.apiBaseUrl}/heroes`);
+    return this.httpClient.get<Hero[]>(`${ this.apiBaseUrl }/heroes`);
   }
 
   getHeroById( id: string ): Observable<Hero> {
-    return this.httpClient.get<Hero>(`${this.apiBaseUrl}/heroes/${id}`);
+    return this.httpClient.get<Hero>(`${ this.apiBaseUrl }/heroes/${id}`);
   }
 
 }
