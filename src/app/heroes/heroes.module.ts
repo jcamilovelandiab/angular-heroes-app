@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
 import { HeroImagePipe } from './pipes/hero-image.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { HeroImagePipe } from './pipes/hero-image.pipe';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     FlexLayoutModule,
     MaterialModule,
     HeroesRoutingModule

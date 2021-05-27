@@ -16,8 +16,8 @@ import { HeroesService } from '../../services/heroes.service';
 })
 export class HeroComponent implements OnInit {
 
-  id: string;
-  hero: Hero;
+  id: string = '';
+  hero!: Hero;
 
   constructor(
     private activatedRoute: ActivatedRoute,
